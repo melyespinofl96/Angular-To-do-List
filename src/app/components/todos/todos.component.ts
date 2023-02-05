@@ -26,8 +26,6 @@ export class TodosComponent implements OnInit {
   //otro dia po
   //otra namas paque sea mas verde xd
 
-<<<<<<< HEAD
-=======
   toggleDone(id: number){
     this.todos.map((v, i) => {
       if(i == id)
@@ -48,5 +46,4 @@ export class TodosComponent implements OnInit {
     });
     this.inputTodo = "";
   }
->>>>>>> parent of 869dacd (Revert "another update")
 }
