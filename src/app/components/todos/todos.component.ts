@@ -20,17 +20,8 @@ export class TodosComponent implements OnInit {
       }
     ]
   }
+  //Continue at 19:00
+  //otro dia po
+  //otra namas paque sea mas verde xd
 
-  toggleDone(id: number){
-    this.todos.map((v, i) => {
-      if(i == id)
-      v.completed = !v.completed;
-
-      return v;
-    })
-  }
-
-  deleteTodo(id: number){
-    this.todos = this.todos.filter((v, i) => i !== id);
-  }
 }
