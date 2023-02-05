@@ -1,5 +1,19 @@
 <div class = "todos">
+<<<<<<< HEAD
     <div class = "todo" *ngFor="let todo of todos; let i = index">
+=======
+    <form (submit)="addTodo()">
+        <input  type="text"
+                name="inputTodo"
+                placeholder="Enter Todo..."
+                class="todo-input"
+                [(ngModel)]="inputTodo"
+                />
+        <input type="submit" value="Add Todo" class="todo-submit">
+    </form>
+    <div  *ngFor="let todo of todos; let i = index;"
+    class = "todo {{ (todo.completed ? 'done' : '') }}">
+>>>>>>> parent of 869dacd (Revert "another update")
         <div class="id">{{i}}</div>
         <div class="content">{{todo.content}}</div>
         <button class="delete">Remove</button>

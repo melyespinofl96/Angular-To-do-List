@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from '../../model/Todo';
 
 @Component({
@@ -8,6 +8,8 @@ import { Todo } from '../../model/Todo';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
+
+  inputTodo: string = "";
 
   ngOnInit(): void {
     this.todos = [
@@ -24,4 +26,27 @@ export class TodosComponent implements OnInit {
   //otro dia po
   //otra namas paque sea mas verde xd
 
+<<<<<<< HEAD
+=======
+  toggleDone(id: number){
+    this.todos.map((v, i) => {
+      if(i == id)
+      v.completed = !v.completed;
+
+      return v;
+    })
+  }
+
+  deleteTodo(id: number){
+    this.todos = this.todos.filter((v, i) => i !== id);
+  }
+
+  addTodo(){
+    this.todos.push({
+      content: this.inputTodo,
+      completed: false
+    });
+    this.inputTodo = "";
+  }
+>>>>>>> parent of 869dacd (Revert "another update")
 }
