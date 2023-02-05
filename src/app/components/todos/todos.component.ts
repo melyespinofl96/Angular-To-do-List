@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Todo } from '../../model/Todo';
 
 @Component({
@@ -8,8 +8,6 @@ import { Todo } from '../../model/Todo';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
-
-  inputTodo: string = "";
 
   ngOnInit(): void {
     this.todos = [
@@ -34,13 +32,5 @@ export class TodosComponent implements OnInit {
 
   deleteTodo(id: number){
     this.todos = this.todos.filter((v, i) => i !== id);
-  }
-
-  addTodo(){
-    this.todos.push({
-      content: this.inputTodo,
-      completed: false
-    });
-    this.inputTodo = "";
   }
 }
