@@ -1,17 +1,46 @@
-<div class="todos">
-	<form (submit)="addTodo()">
-		<input 
-			type="text"
-			name="inputTodo"
-			placeholder="Enter todo..."
-			class="todo-input"
-			[(ngModel)]="inputTodo"
-		/>
-		<input type="submit" value="Add Todo" class="todo-submit" />
-	</form>
-	<div *ngFor="let todo of todos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}">
-		<div class="id">{{ i }}</div>
-		<div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
-		<button class="delete" (click)="deleteTodo(i)">Remove</button>
-	</div>
+<!--
+<form (submit)="addTodo()">
+    <input 
+        type="text"
+        name="inputTodo"
+        placeholder="Enter todo..."
+        class="todo-input"
+        [(ngModel)]="inputTodo"
+    />
+    <input type="submit" value="Add Todo" class="todo-submit" />
+</form>
+-->
+<div>
+    <form class="mx-10" (submit)="addTodo()">
+        <input 
+            type="text"
+            name="inputTodo"
+            placeholder="Enter todo..."
+            class="h-8 text-xl bg-slate-100 px-3"
+            [(ngModel)]="inputTodo"
+        />
+        <input type="submit" value="Add Todo +"
+                class="h-8 text-xl px-2 mx-5 rounded-md
+                    bg-red-400 hover:bg-red-500
+                    text-white font-semibold " />
+    </form>
+
+    <h1 class="text-left text-3xl font-bold py-5"> Tasks: </h1>
+
+    <div *ngFor="let todo of todos; let i = index;"
+         class="px-10 py-5 shadow-md flex my-5 border-spacing-4 bg-slate-50 hover:bg-slate-200
+                {{ (todo.completed ? 'done' : '') }}">
+        <div class="w-1/3 p-4">{{ i }}</div>
+        <div class="w-1/2 p-4" (click)="toggleDone(i)">{{ todo.content }}</div>
+        <button class="w-1/5 p-4 mx-5 rounded-md text-white font-semibold bg-red-400 hover:bg-red-500" 
+                (click)="deleteTodo(i)">Remove</button>
+    </div>
 </div>
+
+<!--
+<div *ngFor="let todo of todos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}">
+    <div class="id">{{ i }}</div>
+    <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+    <button class="delete" (click)="deleteTodo(i)">Remove</button>
+</div>
+-->
