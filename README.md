@@ -1,4 +1,4 @@
-# AngularTo-DoList
+# Angular To-Do List
 
 Simple To-do List Application made in Angular and Tailwind CSS
 
